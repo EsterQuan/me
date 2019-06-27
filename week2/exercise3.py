@@ -1,13 +1,15 @@
 (# -*- coding: UTF-8 -*-
 """Modify each function until the tests pass."""
 
-
-def is_odd(a_number):
+def is_odd (num):
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-return (a_number % 2) != 0
+    if num % 2 == 0:
+         return False
+    else:
+        return True
 
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
@@ -235,7 +237,7 @@ def loops_7():
             x = x + 1
             list1.append(list2)
         return list1
-        
+
 
 
 def lp(some_kind_of_list, exercise_name):
