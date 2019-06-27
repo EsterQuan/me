@@ -1,15 +1,17 @@
-(# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 """Modify each function until the tests pass."""
 
-def is_odd (num):
+
+def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    if num % 2 == 0:
-         return False
-    else:
+    if a_number % 2 == 0:
+        return False
+    elif a_number % 2 != 0:
         return True
+
 
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
@@ -26,17 +28,14 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    
-    if moves and should_move:
-        return "No Problem"
-    elif moves and not should_move:
-        return "Duck Tape"
-    elif not moves and should move:
+
+    if moves == True and should_move != True:
+        return "Duct Tape"
+    elif moves != True and should_move == True:
         return "WD-40"
     else:
-        return "something wrong"
-
-
+        return "No Problem"
+    
 def loops_1a():
     """Make 10 stars.
 
@@ -46,9 +45,8 @@ def loops_1a():
     """
     list = []
     for i in range (10):
-        list.append（“*”）
+        list.append("*")
     return list
-
 
 def loops_1c(number_of_items=5, symbol="#"):
     """Respond to variables.
@@ -59,7 +57,7 @@ def loops_1c(number_of_items=5, symbol="#"):
     """
     list = []
     for i in range (int(number_of_items)):
-        list.append
+        list.append(symbol)
     return list
 
 
@@ -81,9 +79,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    
-    return list1
 
+    list1 = []
+    for a in range (10):
+        list2 = []
+        for i in range (10):
+            list2.append("*")
+        list1.append(list2)
+    return list1
 
 def loops_3():
     """Make a rising block of numbers.
@@ -110,7 +113,7 @@ def loops_3():
     for a in range (10):
         list2 = []
         for b in range (10):
-            list.append(str(a))
+            list2.append(str(a))
         list1.append(list2)
     return list1
 
@@ -133,12 +136,13 @@ def loops_4():
     ]
     """
     list1 = []
-    for a in rang (10):
-        list2 = [] 
+    for a in range (10):
+        list2 = []
         for b in range (10):
             list2.append(str(b))
         list1.append(list2)
     return list1
+
 
 def loops_5():
     """Make the coordinates of the block.
@@ -165,11 +169,11 @@ def loops_5():
     you'll come to see the pros and cons of each over time.
     """
     list1 = []
-    for a in rang (10):
+    for a in range (10):
         list2 = []
         for b in range (5):
-            list2.append("(" + "i" + str(a) + "," + " " + "j" + str(b) + ")") 
-            list1.append(list2)
+            list2.append("(" + "i" + str(a) + "," + " " + "j" + str(b) + ")")
+        list1.append(list2)
     return list1
 
 
@@ -178,7 +182,7 @@ def loops_6():
 
     Return this:
     [
-      ['0']
+      ['0'],
       ['0', '1'],
       ['0', '1', '2'],
       ['0', '1', '2', '3'],
@@ -200,7 +204,6 @@ def loops_6():
             list2.append(str(b))
         list1.append(list2)
     return list1
-            
 
 
 def loops_7():
@@ -224,20 +227,20 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
+
     list1 = []
     for a in range (1,6):
         list2 = []
-        for b in rang (1,10):
-            x=0
-            y=5
+        for b in range (1,10):
+            x = 0
+            y = 5
             if b > y - a and b < y + a:
                 list2.append("*")
             else:
                 list2.append(" ")
             x = x + 1
-            list1.append(list2)
-        return list1
-
+        list1.append(list2)
+    return list1
 
 
 def lp(some_kind_of_list, exercise_name):
@@ -281,4 +284,3 @@ if __name__ == "__main__":
     lp(loops_5(), "loops_5")
     lp(loops_6(), "loops_6")
     lp(loops_7(), "loops_7")
-)
