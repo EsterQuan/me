@@ -2,5 +2,10 @@ name: Ester Quan
 studentNumber: z5255533
 officialEmail: z5255533@ad.unsw.edu.au
 contactEmail:
+<<<<<<< HEAD
   firstBit: "1099486882"  ### this avoids spam, the @ is implied
   otherBit: "@qq.com"
+=======
+  firstBit: Ester.Quan
+  otherBit: whereIwork.com
+>>>>>>> 83c15664bac3503d771c08c45df33a1a4432b70b
