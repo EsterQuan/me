@@ -38,6 +38,7 @@ def advancedGuessingGame():
     guessed = False
 
     while not guessed:
+      try:
         guessedNumber = int(input("Guess a number: "))
         print("You guessed {},".format(guessedNumber),)
         if guessedNumber == actualNumber:
@@ -47,6 +48,10 @@ def advancedGuessingGame():
             print("Too small, try again :'(")
         else:
             print("Too big, try again :'(")
+      except Exception as e:
+        print ("erro.try again ({})".format(e))
+         
+
     return "You got it!"
 
 
