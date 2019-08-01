@@ -25,10 +25,10 @@ def binary_search(low, high, actual_number):
     """
     
 
-    tries = 0
-    guess = 0
+tries = 5
+guess = 10
     
-   
+"""
     while guess != actual_number:
         guess = int(input("Guess a number: "))
         tries = tries + 1
@@ -42,6 +42,7 @@ def binary_search(low, high, actual_number):
             print("You got it!")
     
     return {"guess": guess, "tries": tries}
+"""
 
 
 if __name__ == "__main__":
