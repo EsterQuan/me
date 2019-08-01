@@ -49,7 +49,7 @@ def advancedGuessingGame():
         else:
             print("Too big, try again :'(")
       except Exception as e:
-        print ("erro.try again ({})".format(e))
+        print ("no ({})".format(e))
          
 
     return "You got it!"
