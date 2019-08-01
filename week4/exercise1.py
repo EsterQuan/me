@@ -36,7 +36,15 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    b = data["result"][0]
+    lastName = b["name"]["last"]
+    password = b["login"]["password"]
+    postcode = b["location"]["postcode"]
+    the_id = b["id"]["value"]
+
+    pANDid = int(the_id) + int(postcode)
+
+    return {"lastName":lastName, "password": password, "postcodePlusID": pANDid}
 
 
 def wordy_pyramid():
@@ -77,29 +85,40 @@ def wordy_pyramid():
     pass
 
 
-def wunderground():
-    """Find the weather station for Sydney.
+def pokedex(low=1, high=5):
+    """ Return the name, height and weight of the tallest pokemon in the range low to high.
 
-    Get some json from a request parse it and extract values.
-    Sign up to https://www.wunderground.com/weather/api/ and get an API key
+    Low and high are the range of pokemon ids to search between.
+    Using the Pokemon API: https://pokeapi.co get some JSON using the request library
+    (a working example is filled in below).
+    Parse the json and extract the values needed.
+    
     TIP: reading json can someimes be a bit confusing. Use a tool like
          http://www.jsoneditoronline.org/ to help you see what's going on.
     TIP: these long json accessors base["thing"]["otherThing"] and so on, can
          get very long. If you are accessing a thing often, assign it to a
-         variable and then future access will be easier.
+         variable and then future access will be easier. BVNfeb17
     """
-    base = "http://api.wunderground.com/api/"
-    api_key = "YOUR KEY - REGISTER TO GET ONE"
-    country = "AU"
-    city = "Sydney"
-    template = "{base}/{key}/conditions/q/{country}/{city}.json"
-    url = template.format(base=base, key=api_key, country=country, city=city)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-        obs = the_json["current_observation"]
+    template = "https://pokeapi.co/api/v2/pokemon/{id}"
+    
+    tallest_pokemon_height = -1
+    tallest_pokemon = None
+    for pokeID in range(low, high):
+       url = template.format(id=pokeID)
+       r = requests.get(url)
+       if r.status_code is 200:
+           one_poke = r.json()
+           if one_poke["height"] > tallest_pokemon_height:
+               tallest_pokemon = one_poke
+               tallest_pokemon_height = one_poke["height"]
+    print(tallest_pokemon)
+    return {
+        "name": tallest_pokemon["name"], 
+        "weight": tallest_pokemon["weight"], 
+        "height": tallest_pokemon["height"]
+    }
 
-    return {"state": None, "latitude": None, "longitude": None, "local_tz_offset": None}
+   
 
 
 def diarist():
@@ -114,6 +133,7 @@ def diarist():
          might be why. Try in rather than == and that might help.
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
+    TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
     pass
 

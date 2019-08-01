@@ -6,13 +6,17 @@ Modify each function until the tests pass.
 
 
 def loop_ranger(start, stop=None, step=1):
-    """Return a list of numbers between start and stop in steps of step.
-
+   """ Return a list of numbers between start and stop in steps of step.
+    
     Do this using any method apart from JUST using range()
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
-    """
-    return None
+   """     
+   new_list = []
+   for a_number in range(start, stop, step):
+      new_list.append(a_number)
+   return new_list
+      
 
 
 def lone_ranger(start, stop, step):
@@ -20,7 +24,8 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    
+    return range (start, stop, step)
 
 
 def two_step_ranger(start, stop):
@@ -29,7 +34,7 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    return range (start, stop, 2)
 
 
 def stubborn_asker(low, high):
@@ -40,7 +45,18 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+   
+    message = "give me a number between {low}, and {high}: ".format(low= low, high= high)
+    while True:
+       input_number = int(input(message))
+       if low < input_number < high:
+          print("Thanks{} looks good.".format(input_number)) 
+          return input_number
+       else:
+          print("{input} isn't between {low}, and {high}".format(input=input_number, low=low, high=high))
+   
+
+   
 
 
 def not_number_rejector(message):
@@ -50,7 +66,14 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    while True:
+       try:
+          input_number = int(input(message))
+          print ("Thanks {} looks good.".format(input_number))
+          return input_number
+       except Exception as e:
+          print ("erro.try again ({})".format(e))
+
 
 
 def super_asker(low, high):
@@ -61,8 +84,17 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
-
+    message = "give me a number between {low}, and {high}: ".format(low= low, high= high)
+    while True:
+       input_number = int(input(message))
+       if low < input_number < high:
+          print("Thanks{} looks good.".format(input_number))
+          return input_number
+       else:
+          print("{input} isn't between {low}, and {high}".format(input=input_number, low=low, high=high))
+      
+          
+         
 
 if __name__ == "__main__":
     # this section does a quick test on your results and prints them nicely.
