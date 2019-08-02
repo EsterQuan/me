@@ -49,7 +49,7 @@ def do_bunch_of_bad_things():
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    pass
+   pass
 
 
 # TRIANGLES
@@ -63,7 +63,6 @@ def countdown(message, start, stop, completion_message):
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
     pass
-
 
 def calculate_area(base, height):
     pass
