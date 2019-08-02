@@ -1,5 +1,5 @@
 """Your first python program!
 
-TODO: write a python script that first prints "Hello world!"
+TODO: write a python script that first prints "Hello world!."
 """
 print("Hello world!")
