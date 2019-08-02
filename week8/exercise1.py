@@ -74,8 +74,8 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-
-    return ""
+    string_join = "|" + "|".join(input_string) + "|"
+    return string_join 
 
 
 def pet_filter(letter="a"):
@@ -91,8 +91,12 @@ def pet_filter(letter="a"):
             "siamese fighting fish","fancy rat and lab rat","mink","red fox",
             "hedgehog","guppy",]
     # fmt: on
-
-    return []
+    PetsList = []
+    ListLength = len(pets)
+    for i in range(ListLength):
+        if pets[i].count(letter) > 0:
+            PetsList.append(pets[i])
+    return PetsList
 
 
 def best_letter_for_pets():
@@ -101,10 +105,20 @@ def best_letter_for_pets():
     TIP: return just a letter, not the list of animals.
     """
     import string
-
+    ResultLetter = ""
+    Length = -1
     the_alphabet = string.ascii_lowercase
+    AlphabetList = list(the_alphabet)
+    AlphabetLength =len(AlphabetList)
+    for i in range(AlphabetLength):
+        Letter = AlphabetList[i]
+        PetsList = pet_filter(Letter)
+        TempLength = len(PetsList)
+        if TempLength > Length:
+            Length = TempLength
+            ResultLetter = Letter
 
-    return ""
+    return ResultLetter
 
 
 def make_filler_text_dictionary():
