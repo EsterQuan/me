@@ -147,6 +147,14 @@ def make_filler_text_dictionary():
     """
 
     import requests
+    Dict = {}
+    start = 3
+    stop = 7
+    for i in range(start, stop+1, 1):
+        Number = str(i)
+        Dict[Number] = []
+    url_param = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=18"
+
 
     return {}
 
