@@ -93,7 +93,7 @@ def pokedex(low=1, high=5):
          http://www.jsoneditoronline.org/ to help you see what's going on.
     TIP: these long json accessors base["thing"]["otherThing"] and so on, can
          get very long. If you are accessing a thing often, assign it to a
-         variable and then future access will be easier. BVNfeb17
+         variable and then future access will be easier. BVNfeb17.
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
     
