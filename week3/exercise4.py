@@ -21,7 +21,7 @@ def binary_search(low, high, actual_number):
     This will be quite hard, especially hard if you don't have a good diagram!
     
     Use the VS Code debugging tools a lot here. It'll make understanding 
-    things much easier.
+    things much easier..
     """
     
 

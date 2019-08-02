@@ -63,7 +63,7 @@ def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
 
     Ask for a number, and if the response is actually NOT a number 
-    (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
+    (e.g. "cow", "six", "8!") then throw it out and ask for an actual number..
     When you do get a number, return it.
     """
     while True:

@@ -23,7 +23,7 @@ def advancedGuessingGame():
     be able to eventually, it'd be better to take the code from exercise 2 and
     merge it with code from excercise 1.
     Remember to think modular. Try to keep your functions small and single
-    purpose if you can!
+    purpose if you can!.
     """
     
     
