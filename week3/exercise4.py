@@ -25,8 +25,7 @@ def binary_search(low, high, actual_number):
     """
     
 
-tries = 5
-guess = 10
+
     
 """
     while guess != actual_number:
@@ -43,6 +42,7 @@ guess = 10
     
     return {"guess": guess, "tries": tries}
 """
+pass
 
 
 if __name__ == "__main__":
