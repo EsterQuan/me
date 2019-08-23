@@ -5,7 +5,7 @@
     ],
     "machine": "AMD64",
     "os_name": "nt",
-    "platform": "Windows-10-10.0.17134-SP0",
+    "platform": "Windows-10-10.0.18362-SP0",
     "processor": "Intel64 Family 6 Model 61 Stepping 4, GenuineIntel",
     "release": "10",
     "system": "Windows",
@@ -13,11 +13,11 @@
         "Windows",
         "DESKTOP-AU5N320",
         "10",
-        "10.0.17134",
+        "10.0.18362",
         "AMD64",
         "Intel64 Family 6 Model 61 Stepping 4, GenuineIntel"
     ],
-    "version": "10.0.17134",
+    "version": "10.0.18362",
     "python_build": [
         "default",
         "Mar 27 2019 17:13:21"
